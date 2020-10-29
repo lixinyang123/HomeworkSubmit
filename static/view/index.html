@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业提交</title>
+</head>
+<body>
+    <form method="POST" action="/submit" enctype="multipart/form-data">
+
+        <h2>作业提交</h2>
+
+        <div>
+            <input type="num" placeholder="学号" name="userId" />
+        </div>
+
+        <div>
+            <input type="text" placeholder="姓名" name="name" />
+        </div>
+
+        <div>
+            <span>HTML</span>
+            <input type="radio" value="HTML" name="homework" />
+        </div>
+
+        <div>
+            <span>SQL</span>
+            <input type="radio" value="SQL" name="homework" />
+        </div>
+
+        <div>
+            <span>Python</span>
+            <input type="radio" value="Python" name="homework" />
+        </div>
+
+        <div>
+            <input type="file" name="file" >
+        </div>
+
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+
+    </form>
+</body>
+</html>
