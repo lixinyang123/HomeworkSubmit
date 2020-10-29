@@ -10,21 +10,18 @@ if not os.path.exists(savePath):
 # 保存作业
 def SaveHomeWork():
 
-    # userId = request.form["userId"]
-    # name = request.form["name"]
-    # homework = request.form["homework"]
-
-    # tempFile = request.files["file"]
-    # tempFile.save("./temp.txt")
-
+    # 获取班级id
     userId = request.form["userId"].replace("0223012006","")
     name = request.form["name"]
 
     tempFile = request.files["file"]
+
+    # 读取文件扩展名
     extName = tempFile.filename.split(".").pop()
 
     fileName = "%s_%s.%s"%(userId, name, extName)
 
+    # 生成保存路径
     date = datetime.datetime.now().date()
     pathName = "%s/%s/%s/"%(savePath,request.form["homework"],date)
     if not os.path.exists(pathName):

@@ -31,7 +31,7 @@ def Submit():
     fileManager.SaveHomeWork()
 
     return render_template("warning.html", 
-        warning = "提交文件格式错误"
+        warning = "上传成功"
     )
 
 

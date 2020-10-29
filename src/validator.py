@@ -30,7 +30,7 @@ def VerifyUser():
         return False
     
     for student in students:
-        if student.id == userId and student.name == request.form["name"]:
+        if student["id"] == userId and student["name"] == request.form["name"]:
             return True
 
     return False
