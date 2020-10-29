@@ -1,6 +1,8 @@
-from flask import *
 import os
-import validator,fileManager
+from flask import *
+import validator,fileManager,minifier
+
+minifier.Minify()
 
 app = Flask(__name__)
 
