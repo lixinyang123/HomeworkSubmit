@@ -7,8 +7,8 @@ savePath = "./Homeworks"
 if not os.path.exists(savePath):
     os.mkdir(savePath)
 
-# 保存作业
-def SaveHomeWork():
+# 生成文件完整名称（保存路径 + 文件名称）
+def GetFullPath():
 
     # 获取班级id
     userId = request.form["userId"].replace("0223012006","")
@@ -27,4 +27,12 @@ def SaveHomeWork():
     if not os.path.exists(pathName):
         os.makedirs(pathName)
 
-    tempFile.save(pathName + fileName)
+    return pathName + fileName
+
+# 检查作业是否存在
+def Exists():
+    return os.path.exists(GetFullPath())
+
+# 保存作业
+def SaveHomework():
+    request.files["file"].save(GetFullPath())
