@@ -25,7 +25,7 @@ def Minify():
                     newPath = path.replace(".css",".min.css")
                     
                     with open(path) as sourceFile:
-                        minified = jsmin.jsmin(sourceFile.read())
+                        minified = cssmin.cssmin(sourceFile.read())
                 
                 with open(newPath,"w+") as miniFile:
                     miniFile.write(minified)

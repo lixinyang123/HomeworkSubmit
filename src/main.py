@@ -1,6 +1,6 @@
 import os
 from flask import *
-import validator,fileManager,minifier
+import validator,manager,minifier
 
 minifier.Minify()
 
@@ -30,7 +30,7 @@ def Submit():
             warning = "提交文件格式错误"
         )
 
-    fileManager.SaveHomeWork()
+    manager.SaveHomeWork()
 
     return render_template("warning.html", 
         warning = "上传成功"
