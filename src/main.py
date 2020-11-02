@@ -30,7 +30,7 @@ def Submit():
             warning = "提交文件格式错误"
         )
 
-    manager.SaveHomeWork()
+    manager.SaveHomework()
 
     return render_template("warning.html", 
         warning = "上传成功"
