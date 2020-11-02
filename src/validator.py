@@ -41,7 +41,7 @@ def VerifyFile():
     tempFile = request.files["file"]
 
     # 默认允许压缩文件
-    if request.files["file"].filename.endswith(".zip"):
+    if request.files["file"].filename.endswith(".zip") or request.files["file"].filename.endswith(".rar") or request.files["file"].filename.endswith(".7z"):
         return True
 
     # 检测上传文件格式是否正确
