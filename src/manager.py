@@ -1,5 +1,5 @@
 from flask import *
-import os,datetime,io
+import os,datetime,io,json
 
 savePath = json.loads(io.open("./config/students.json","r").read())["SavePath"]
 
