@@ -1,7 +1,7 @@
 from flask import *
 import os,datetime,io,json
 
-savePath = json.loads(io.open("./config/students.json","r").read())["SavePath"]
+savePath = json.loads(io.open("./config/config.json","r").read())["SavePath"]
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
