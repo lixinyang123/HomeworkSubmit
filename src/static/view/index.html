@@ -5,38 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作业提交</title>
     <link rel="shortcut icon" href="/static/favicon.ico" />
+
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
 </head>
 <body>
+
+    <header>
+        <h2>作业提交</h2>
+    </header>
+
+
     <form method="POST" action="/submit" enctype="multipart/form-data">
 
-        <h2>作业提交</h2>
-
-        <div>
+        <p>信息</p>
+        <blockquote>
             <input type="num" placeholder="学号" name="userId" />
-        </div>
-
-        <div>
             <input type="text" placeholder="姓名" name="name" />
-        </div>
+            <input type="hidden" />
+        </blockquote>
 
-        <div>
-            <span>HTML</span>
-            <input type="radio" value="HTML" name="homework" />
-        </div>
+        <p>作业</p>
+        <blockquote>
+            <div>
+                <input type="radio" value="HTML" name="homework" />
+                <span>HTML</span>
+    
+                <input type="radio" value="SQL" name="homework" />
+                <span>SQL</span>
+    
+                <input type="radio" value="Python" name="homework" />
+                <span>Python</span>
+            </div>
+            
+            <hr />
 
-        <div>
-            <span>SQL</span>
-            <input type="radio" value="SQL" name="homework" />
-        </div>
-
-        <div>
-            <span>Python</span>
-            <input type="radio" value="Python" name="homework" />
-        </div>
-
-        <div>
-            <input type="file" name="file" >
-        </div>
+            <div>
+                <a href="javascript:void(0);" onclick="document.getElementById('selector').click()">上传文件</a>
+                <span id="file"></span>
+                <input id="selector" type="file" name="file" onchange="document.getElementById('file').innerText = document.getElementById('selector').value" hidden />
+            </div>
+        </blockquote>
 
         <div>
             <input type="submit" value="提交" />

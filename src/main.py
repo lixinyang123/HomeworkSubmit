@@ -36,15 +36,5 @@ def Submit():
         warning = "上传成功"
     )
 
-    # if not fileManager.Exists():
-    #     fileManager.SaveHomeWork()
-    #     return render_template("warning.html", 
-    #         warning = "上传成功"
-    #     )
-
-    # return render_template("warning.html",
-    #     warning = "已经上传"
-    # )
-
 
 app.run()
