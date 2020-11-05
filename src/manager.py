@@ -1,7 +1,8 @@
 from flask import *
 import os,datetime,io,json
 
-savePath = json.loads(io.open("./config/config.json","r").read())["SavePath"]
+savePath = input("输入保存路径：").rstrip() + "/Homework"
+folderName = input("输入文件夹名称：").rstrip()
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
@@ -22,8 +23,7 @@ def GetFullPath():
     fileName = "%s_%s.%s"%(userId, name, extName)
 
     # 生成保存路径
-    date = datetime.datetime.now().date()
-    pathName = "%s/%s/%s/"%(savePath,request.form["homework"],date)
+    pathName = "%s/%s/%s/"%(savePath,request.form["homework"],folderName)
     if not os.path.exists(pathName):
         os.makedirs(pathName)
 
