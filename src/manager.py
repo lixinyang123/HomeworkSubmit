@@ -6,7 +6,10 @@ folderName = input("输入文件夹名称：").rstrip()
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
-    os.mkdir(savePath)
+    try:
+        os.mkdir(savePath)
+    except:
+        raise Exception("无法创建输入的目录")
 
 # 生成文件完整名称（保存路径 + 文件名称）
 def GetFullPath():
