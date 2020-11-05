@@ -1,5 +1,5 @@
 from flask import *
-import os,datetime,io,json
+import os,datetime,io,json,_thread
 
 savePath = input("输入保存路径：").rstrip() + "/Homework"
 folderName = input("输入文件夹名称：").rstrip()
@@ -10,6 +10,13 @@ if not os.path.exists(savePath):
         os.mkdir(savePath)
     except:
         raise Exception("无法创建输入的目录")
+
+def StartServer():
+    _thread.start_new_thread(lambda :(
+            os.chdir(savePath),
+            os.system("python -m http.server 8000")
+        )
+    )
 
 # 生成文件完整名称（保存路径 + 文件名称）
 def GetFullPath():
@@ -26,7 +33,7 @@ def GetFullPath():
     fileName = "%s_%s.%s"%(userId, name, extName)
 
     # 生成保存路径
-    pathName = "%s/%s/%s/"%(savePath,request.form["homework"],folderName)
+    pathName = "./%s/%s/"%(request.form["homework"],folderName)
     if not os.path.exists(pathName):
         os.makedirs(pathName)
 

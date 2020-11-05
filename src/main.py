@@ -28,4 +28,5 @@ def Submit():
 
     return "上传成功"
 
+manager.StartServer()
 app.run()
