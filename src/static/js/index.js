@@ -1,3 +1,4 @@
+// 切换主题
 function switchTheme(){
     if(document.body.className == "light"){
         document.body.className = "dark";
@@ -7,9 +8,6 @@ function switchTheme(){
     }
 }
 
-function fileServer() {
-    navigate("files.html");
-}
 
 function initTheme(){
     let time = new Date().getHours();
