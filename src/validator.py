@@ -26,6 +26,9 @@ def VerifyRequire():
 # 验证用户
 def VerifyUser():
     userId = request.form["userId"]
+    if len(userId) == 2:
+        userId = "0223012006" + userId
+
     if not userId.startswith("0223012006") or not len(userId) == 12:
         return False
     
