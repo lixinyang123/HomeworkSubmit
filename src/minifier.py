@@ -9,6 +9,19 @@ def Minify():
     ]
 
     for directory in directories:
+
+        # 移除压缩的静态文件
+        for staticFile in os.listdir(directory):
+
+            path = directory + staticFile
+
+            if os.path.isfile(path):
+
+                if path.endswith(".min.js") or path.endswith(".min.css"):
+                    os.remove(path)
+
+
+        # 重新压缩静态文件
         for staticFile in os.listdir(directory):
 
             path = directory + staticFile

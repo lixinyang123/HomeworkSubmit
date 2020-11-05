@@ -1,6 +1,4 @@
 .light {
-    --nc-font-sans: 'Fira Code', monospace;
-    --nc-font-mono: 'Fira Code', monospace;
     --nc-tx-1: #000000;
     --nc-tx-2: #1A1A1A;
     --nc-bg-1: #FFFFFF;
@@ -14,8 +12,6 @@
 }
 
 .dark {
-    --nc-font-sans: 'Fira Code', monospace;
-    --nc-font-mono: 'Fira Code', monospace;
     --nc-tx-1: #FFFFFF;
     --nc-tx-2: #EEEEEE;
     --nc-bg-1: #000000;

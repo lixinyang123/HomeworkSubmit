@@ -8,7 +8,7 @@ function switchTheme(){
 }
 
 function initTheme(){
-    var time = new Date().getHours();
+    let time = new Date().getHours();
     if(time > 6 && time < 19){
         document.body.className = "light";
     }
@@ -16,3 +16,22 @@ function initTheme(){
         document.body.className = "dark";
     }
 }
+
+function navigate(page){
+    let url = "/static/view/" + page;
+
+    fetch(url,{
+        method:"GET"
+    }).then((res)=>{
+        res.text().then((html)=>{
+            document.querySelector("#container").innerHTML = html;
+        })
+    });
+}
+
+function init(){
+    initTheme();
+    navigate("home.html");
+}
+
+init();
