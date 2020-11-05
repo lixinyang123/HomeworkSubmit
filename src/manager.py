@@ -11,6 +11,7 @@ if not os.path.exists(savePath):
     except:
         raise Exception("无法创建输入的目录")
 
+# 启动文件服务器
 def StartServer():
     _thread.start_new_thread(lambda :(
             os.chdir(savePath),
