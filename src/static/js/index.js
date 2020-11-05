@@ -7,6 +7,10 @@ function switchTheme(){
     }
 }
 
+function fileServer() {
+    navigate("files.html");
+}
+
 function initTheme(){
     let time = new Date().getHours();
     if(time > 6 && time < 19){
