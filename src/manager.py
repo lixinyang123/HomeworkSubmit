@@ -13,8 +13,8 @@ if not os.path.exists(savePath):
 
 # 启动文件服务器
 def StartServer():
+    os.chdir(savePath)
     _thread.start_new_thread(lambda :(
-            os.chdir(savePath),
             os.system("python -m http.server 8000")
         )
     )

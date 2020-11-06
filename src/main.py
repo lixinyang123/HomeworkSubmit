@@ -29,4 +29,4 @@ def Submit():
     return "上传成功"
 
 manager.StartServer()
-app.run()
+app.run(host="0.0.0.0")
