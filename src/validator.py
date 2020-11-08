@@ -2,7 +2,7 @@ from flask import *
 import json,io
 
 # 读取学生信息
-students = json.loads(io.open("./config/students.json","r").read())
+students = json.loads(io.open("./config/students.json","r",encoding="utf-8").read())
 
 # 验证必须数据
 def VerifyRequire():

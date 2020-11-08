@@ -31,14 +31,14 @@ def Minify():
                 if path.endswith(".js"):
                     newPath = path.replace(".js",".min.js")
 
-                    with open(path) as sourceFile:
+                    with open(path,encoding="utf-8") as sourceFile:
                         minified = jsmin.jsmin(sourceFile.read())
 
                 if staticFile.endswith(".css"):
                     newPath = path.replace(".css",".min.css")
                     
-                    with open(path) as sourceFile:
+                    with open(path,encoding="utf-8") as sourceFile:
                         minified = cssmin.cssmin(sourceFile.read())
                 
-                with open(newPath,"w+") as miniFile:
+                with open(newPath,"w+",encoding="utf-8") as miniFile:
                     miniFile.write(minified)

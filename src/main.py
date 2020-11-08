@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 def GetPage(name):
     path = "./src/static/view/" + name + ".html"
-    with open(path) as sourceFile:
+    with open(path,encoding="utf-8") as sourceFile:
         return sourceFile.read()
 
 # 主页
