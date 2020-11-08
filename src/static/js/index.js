@@ -19,8 +19,4 @@ function initTheme(){
     }
 }
 
-function init(){
-    initTheme();
-}
-
-init();
+initTheme();

@@ -6,26 +6,31 @@ minifier.Minify()
 
 app = Flask(__name__)
 
+def GetPage(name):
+    path = "./src/static/view/" + name + ".html"
+    with open(path) as sourceFile:
+        return sourceFile.read()
+
 # 主页
 @app.route("/")
 def Index():
-    return send_file("./static/index.html","text/html")
+    return render_template('index.html', content = GetPage("home"))
 
 # 提交作业
 @app.route("/submit", methods=["post"])
 def Submit():
 
     if not validator.VerifyRequire():
-        return "请完善数据"
+        return render_template('index.html', content = "请完善数据")
     
     if not validator.VerifyUser():
-        return "用户错误"
+        return render_template('index.html', content = "用户错误")
     
     if not validator.VerifyFile():
-        return "提交文件格式错误"
+        return render_template('index.html', content = "提交文件格式错误")
 
     manager.SaveHomework()
 
-    return "上传成功"
+    return render_template('index.html', content = "上传成功")
 
 app.run(host="0.0.0.0")

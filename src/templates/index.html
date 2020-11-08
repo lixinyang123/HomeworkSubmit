@@ -6,6 +6,7 @@
     <title>作业提交</title>
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     
     <link rel="stylesheet" href="/static/css/index.min.css" />
@@ -21,7 +22,7 @@
         </div>
     </header>
 
-    <div id="main"></div>
+    <div>{{ content | safe }}</div>
 </body>
 
 <script src="/static/js/index.min.js"></script>
