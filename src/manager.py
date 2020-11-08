@@ -26,7 +26,7 @@ def GetFullPath():
     fileName = "%s_%s.%s"%(userId, name, extName)
 
     # 生成保存路径
-    pathName = "./%s/%s/"%(request.form["homework"],folderName)
+    pathName = "%s/%s/%s/"%(savePath,request.form["homework"],folderName)
     if not os.path.exists(pathName):
         os.makedirs(pathName)
 
