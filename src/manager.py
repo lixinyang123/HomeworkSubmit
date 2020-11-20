@@ -1,8 +1,8 @@
 from flask import *
-import os,datetime,io,json
+import os,datetime,io,json,sys
 
-savePath = input("输入保存路径：").rstrip() + "/Homework"
-folderName = input("输入文件夹名称：").rstrip()
+savePath = sys.argv[1] + "/Homework"
+folderName = sys.argv[2]
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
