@@ -33,4 +33,12 @@ def Submit():
 
     return render_template('index.html', content = "上传成功")
 
+# 下载作业
+@app.route("/download")
+def Download():
+    manager.PackHomework()
+    response = make_response(send_file("./Homework.zip"))
+    response.headers["Content-Disposition"] = "attachment; filename={};".format("./Homework.zip")
+    return response
+
 app.run(host="0.0.0.0")
