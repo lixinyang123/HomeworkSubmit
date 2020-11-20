@@ -1,8 +1,9 @@
 from flask import *
 import os,datetime,io,json,sys,zipfile
 
-savePath = sys.argv[1] + "/Homework"
+savePath = sys.argv[1] + "/Homeworks"
 folderName = sys.argv[2]
+homeworks = []
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
@@ -43,14 +44,15 @@ def SaveHomework():
 # 打包作业
 def PackHomework():
     packer = zipfile.ZipFile("Homework.zip","w",zipfile.ZIP_DEFLATED)
-    packer.write(packer)
+    GetAllFiles(savePath,packer)
     packer.close()
 
 # 读取所有作业
-def GetAllFiles(homeworkPath):
+def GetAllFiles(homeworkPath,packer):
     for path in os.listdir(homeworkPath):
         fileName = homeworkPath + "/" + path
         if os.path.isfile(fileName):
             print(fileName)
+            packer.write(fileName)
         else:
-            GetAllFiles(fileName)
+            GetAllFiles(fileName,packer)

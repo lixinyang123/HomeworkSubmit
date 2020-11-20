@@ -36,8 +36,8 @@ def Submit():
 # 下载作业
 @app.route("/download")
 def Download():
-    response = make_response(send_file("./Homework.zip"))
-    response.headers["Content-Disposition"] = "attachment; filename={};".format("./Homework.zip")
-    return response
+    manager.PackHomework()
+    absPath = os.path.abspath(os.path.dirname(__file__)) + "/../Homework.zip"
+    return send_file(absPath,as_attachment=True)
 
 app.run(host="0.0.0.0")
