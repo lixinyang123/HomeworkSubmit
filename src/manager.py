@@ -2,6 +2,7 @@ from flask import *
 import os,datetime,io,json,sys,zipfile
 
 savePath = "./Homeworks"
+students = json.loads(io.open("./config/students.json","r",encoding="utf-8").read())
 
 # 创建默认存储路径
 if not os.path.exists(savePath):
@@ -38,6 +39,21 @@ def Exists():
 # 保存作业
 def SaveHomework():
     request.files["file"].save(GetFullPath())
+
+# 删除作业
+def DelHomework(homework):
+    os.rmdir(savePath + "/" + homework)
+
+# 查找未完成
+def GetUndo(subject):
+    undoStudents = []
+    for student in students:
+        flag = False
+        for homework in os.listdir(savePath + "/" + subject):
+            if homework.find(student["name"]) > 0:
+                flag = True
+        if not flag: undoStudents.append(student)
+    return undoStudents
 
 # 打包作业
 def PackHomework():

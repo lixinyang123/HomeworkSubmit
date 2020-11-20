@@ -33,6 +33,12 @@ def Submit():
 
     return render_template('index.html', content = "上传成功")
 
+# 未交名单
+@app.route("/undo")
+def Undo():
+    subject = request.args["subject"]
+    return "Developing...."
+
 # 下载作业
 @app.route("/download")
 def Download():
