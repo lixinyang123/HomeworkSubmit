@@ -36,7 +36,6 @@ def Submit():
 # 下载作业
 @app.route("/download")
 def Download():
-    manager.PackHomework()
     response = make_response(send_file("./Homework.zip"))
     response.headers["Content-Disposition"] = "attachment; filename={};".format("./Homework.zip")
     return response
