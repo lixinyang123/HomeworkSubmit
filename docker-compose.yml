@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+
+  homeworksubmit:
+    image: lixinyang/homeworksubmit
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+
+  filebrowser:
+    image: filebrowser/filebrowser
+    restart: always
+    volumes:
+      - ./Homeworks:/path/to/root
+      - ./config/filebrowser.json:/path/.filebrowser.json
+
+  reverse-proxy:
+    image: nginx
+    depends_on:
+      - homeworksubmit
+      - filebrowser
+    ports:
+      - "8080:80"
+    volumes:
+      - ./config/default.conf:/etc/nginx/conf.d/default.conf
