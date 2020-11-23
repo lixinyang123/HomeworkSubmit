@@ -39,11 +39,4 @@ def Undo():
     subject = request.args["subject"]
     return "Developing...."
 
-# 下载作业
-@app.route("/download")
-def Download():
-    manager.PackHomework()
-    absPath = os.path.abspath(os.path.dirname(__file__)) + "/../Homework.zip"
-    return send_file(absPath,as_attachment=True)
-
 app.run(host="0.0.0.0")

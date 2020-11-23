@@ -54,19 +54,3 @@ def GetUndo(subject):
                 flag = True
         if not flag: undoStudents.append(student)
     return undoStudents
-
-# 打包作业
-def PackHomework():
-    packer = zipfile.ZipFile("Homework.zip","w",zipfile.ZIP_DEFLATED)
-    GetAllFiles(savePath,packer)
-    packer.close()
-
-# 读取所有作业
-def GetAllFiles(homeworkPath,packer):
-    for path in os.listdir(homeworkPath):
-        fileName = homeworkPath + "/" + path
-        if os.path.isfile(fileName):
-            print(fileName)
-            packer.write(fileName)
-        else:
-            GetAllFiles(fileName,packer)
