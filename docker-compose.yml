@@ -8,6 +8,8 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - ./Homeworks:/app/Homeworks
 
   filebrowser:
     image: filebrowser/filebrowser
