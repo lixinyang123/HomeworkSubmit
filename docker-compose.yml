@@ -14,7 +14,7 @@ services:
     restart: always
     volumes:
       - ./Homeworks:/path/to/root
-      - ./config/filebrowser.json:/path/.filebrowser.json
+      - ./config/filebrowser.json:/.filebrowser.json
 
   reverse-proxy:
     image: nginx
