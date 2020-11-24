@@ -13,7 +13,7 @@ Install pre-requisites
 
 - Visit [Python official website](https://www.python.org/) to download Python ( Included pip )
 
-- [Install DockerDesktop](https://docs.docker.com/get-docker/) 
+- Install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) ( Included Docker-Compose )
 
 ##### On Linux
 
@@ -27,7 +27,7 @@ Install pre-requisites
         ```bash
         dnf install python3 python3-pip -y
         ```
-- [Install Docker](https://docs.docker.com/get-docker/) 
+- [Install Docker](https://docs.docker.com/engine/install/) 
 
 - [Install Docker-Compose](https://docs.docker.com/compose/install)
 
