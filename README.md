@@ -13,9 +13,7 @@ Install pre-requisites
 
 - Visit [Python official website](https://www.python.org/) to download Python ( Included pip )
 
-- [Install Docker](https://docs.docker.com/get-docker/) 
-
-- [Install Docker-Compose](https://docs.docker.com/compose/install)
+- [Install DockerDesktop](https://docs.docker.com/get-docker/) 
 
 ##### On Linux
 
