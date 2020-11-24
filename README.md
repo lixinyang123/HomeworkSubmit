@@ -27,9 +27,9 @@ Install pre-requisites
         ```bash
         dnf install python3 python3-pip -y
         ```
-- [Install Docker](https://docs.docker.com/engine/install/) 
+- Install [Docker](https://docs.docker.com/engine/install/) 
 
-- [Install Docker-Compose](https://docs.docker.com/compose/install)
+- Install [Docker-Compose](https://docs.docker.com/compose/install)
 
 ### Restore dependencies
 
