@@ -52,3 +52,7 @@ docker build .
 ```bash
 docker-compose up
 ```
+
+### What is FileBrowser?
+
+[FileBrowser Repository](https://github.com/filebrowser/filebrowser)
