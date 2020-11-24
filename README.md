@@ -7,13 +7,15 @@ Install pre-requisites
 - Python3
 - Python3-pip
 - Docker
-- Docker-Compose
+- DockerCompose
 
 ##### On Windows
 
 - Visit [Python official website](https://www.python.org/) to download Python ( Included pip )
 
-- [Install Docker & Docker-Compose](https://docs.docker.com/get-docker/) 
+- [Install Docker](https://docs.docker.com/get-docker/) 
+
+- [Install DockerCompose](https://docs.docker.com/compose/install)
 
 ##### On Linux
 
@@ -27,7 +29,9 @@ Install pre-requisites
         ```bash
         dnf install python3 python3-pip -y
         ```
-- [Install Docker & Docker-Compose](https://docs.docker.com/get-docker/) 
+- [Install Docker](https://docs.docker.com/get-docker/) 
+
+- [Install DockerCompose](https://docs.docker.com/compose/install)
 
 ### Restore dependencies
 
