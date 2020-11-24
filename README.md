@@ -1,5 +1,7 @@
 # HomeworkSubmit
 
+HomeworkSubmit is our class's homework submission website
+
 ### How to Contribute?
 
 Install pre-requisites
