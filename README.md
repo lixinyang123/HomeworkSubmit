@@ -7,7 +7,7 @@ Install pre-requisites
 - Python3
 - Python3-pip
 - Docker
-- DockerCompose
+- Docker-Compose
 
 ##### On Windows
 
@@ -15,7 +15,7 @@ Install pre-requisites
 
 - [Install Docker](https://docs.docker.com/get-docker/) 
 
-- [Install DockerCompose](https://docs.docker.com/compose/install)
+- [Install Docker-Compose](https://docs.docker.com/compose/install)
 
 ##### On Linux
 
@@ -31,7 +31,7 @@ Install pre-requisites
         ```
 - [Install Docker](https://docs.docker.com/get-docker/) 
 
-- [Install DockerCompose](https://docs.docker.com/compose/install)
+- [Install Docker-Compose](https://docs.docker.com/compose/install)
 
 ### Restore dependencies
 
@@ -58,5 +58,7 @@ docker-compose up
 ```
 
 ### What is FileBrowser?
+
+filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app or as a middleware.
 
 [FileBrowser Repository](https://github.com/filebrowser/filebrowser)
