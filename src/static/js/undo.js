@@ -3,12 +3,13 @@ function getUndoList(subject) {
 
     let url = "/undolist" + subject;
 
-    fetch(url).then((res)=>{
+    fetch(url,{
+        method:"GET"
+    }).then((res)=>{
         res.text().then((data)=>{
-            console.log(data);
-            showData(data);
+            console.log(data)
         });
-    })
+    });
 }
 
 function showData(students){
