@@ -31,7 +31,7 @@ def Submit():
 
     manager.SaveHomework()
 
-    return render_template('index.html', title = "提交成功", content = "广告位")
+    return render_template('index.html', title = "作业提交", content = "提交成功")
 
 # 未交名单
 @app.route("/undo")
