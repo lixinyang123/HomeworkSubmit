@@ -32,25 +32,19 @@ def GetFullPath():
 
     return pathName + fileName
 
-# 检查作业是否存在
-def Exists():
-    return os.path.exists(GetFullPath())
-
 # 保存作业
 def SaveHomework():
     request.files["file"].save(GetFullPath())
 
-# 删除作业
-def DelHomework(homework):
-    os.rmdir(savePath + "/" + homework)
-
 # 查找未完成
 def GetUndo(subject):
     undoStudents = []
-    for student in students:
-        flag = False
-        for homework in os.listdir(savePath + "/" + subject):
-            if homework.find(student["name"]) > 0:
-                flag = True
-        if not flag: undoStudents.append(student)
+    fullPath = savePath + "/" + subject
+    if os.path.exists(fullPath):
+        for student in students:
+            flag = False
+            for homework in os.listdir(fullPath):
+                if homework.find(student["name"]) > 0:
+                    flag = True
+            if not flag: undoStudents.append(student)
     return undoStudents

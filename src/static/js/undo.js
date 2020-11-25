@@ -1,18 +1,18 @@
 
-function getUndoList(subject) {
+function getUndoList(subject,callback) {
 
-    let url = "/undolist" + subject;
+    let url = "/undolist?subject=" + subject;
 
     fetch(url,{
         method:"GET"
     }).then((res)=>{
         res.text().then((data)=>{
-            console.log(data)
+            callback(JSON.parse(data))
         });
     });
 }
 
-function showData(students){
+function showData(students,id){
 
     students.forEach((student) => {
         let html = `
@@ -22,8 +22,18 @@ function showData(students){
             </tr>
         `;
 
-        document.querySelector("#list").innerHTML += html;
+        document.getElementById(id).innerHTML += html;
     });
 }
 
-getUndoList()
+getUndoList("HTML",(data)=>{
+    showData(data,"undoHtml");
+});
+
+getUndoList("SQL",(data)=>{
+    showData(data,"undoSql");
+});
+
+getUndoList("Python",(data)=>{
+    showData(data,"undoPython");
+});
