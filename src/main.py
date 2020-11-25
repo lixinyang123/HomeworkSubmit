@@ -36,7 +36,11 @@ def Submit():
 # 未交名单
 @app.route("/undo")
 def Undo():
+    return render_template('index.html', content = GetPage("undo"))
+
+@app.route("/undolist")
+def UndoList():
     subject = request.args["subject"]
-    return "Developing...."
+    return manager.GetUndo(subject)
 
 app.run(host="0.0.0.0")
