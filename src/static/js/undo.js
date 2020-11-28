@@ -1,7 +1,6 @@
 function getUndoList(subject,callback) {
-
     let url = "/undolist?subject=" + subject;
-
+    
     fetch(url,{
         method:"GET"
     }).then((res)=>{
