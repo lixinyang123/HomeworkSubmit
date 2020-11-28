@@ -57,5 +57,11 @@ def VerifyFile():
     elif request.form["homework"] == "Python":
         return request.files["file"].filename.endswith(".py")
 
+    elif request.form["homework"] == "Cyol":
+        filename = str.lower(request.files["file"].filename)
+        if filename.endswith(".jpg") or filename.endswith(".png"):
+            return True
+        return False
+
     else:
         return False
