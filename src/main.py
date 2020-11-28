@@ -14,7 +14,7 @@ def GetPage(name):
 # 主页
 @app.route("/")
 def Index():
-    return render_template('index.html', title = "作业提交", content = GetPage("home"))
+    return render_template('index.html', title = "6班作业提交", content = GetPage("home"))
 
 # 提交作业
 @app.route("/submit", methods=["post"])
