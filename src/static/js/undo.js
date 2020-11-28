@@ -1,4 +1,3 @@
-
 function getUndoList(subject,callback) {
 
     let url = "/undolist?subject=" + subject;
@@ -13,7 +12,6 @@ function getUndoList(subject,callback) {
 }
 
 function showData(students,id){
-
     students.forEach((student) => {
         let html = `
             <tr>
@@ -21,7 +19,6 @@ function showData(students,id){
                 <td>${student.name}</td>
             </tr>
         `;
-
         document.getElementById(id).innerHTML += html;
     });
 }

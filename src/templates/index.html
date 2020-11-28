@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作业提交</title>
+    <title>{{ title }}</title>
     <link rel="shortcut icon" href="/static/favicon.ico" />
-
-    <link rel="stylesheet" href="/static/lib/css/new.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css" />
     <link rel="stylesheet" href="/static/css/index.min.css" />
 </head>
-<body>
 
+<body>
     <header>
         <h2>{{ title }}</h2>
         <div>
             <a href="/">主页</a>
-            |
+            /
             <a href="/undo">未交名单</a>
-            |
+            /
             <a href="/admin" target="_blank">管理</a>
-            |
+            /
             <a href="https://www.lllxy.net/FeedBack" target="_blank">反馈</a>
-            |
+            /
             <a href="https://github.com/lixinyang123/HomeworkSubmit" target="_blank">源码</a>
         </div>
     </header>
 
     <div>{{ content | safe }}</div>
-</body>
 
-<script src="/static/js/index.min.js"></script>
+    <footer>
+        <hr />
+        <p>❤ Powered by 
+            <a href="https://palletsprojects.com/p/flask/" target="_blank">Flask</a>
+        </p>
+    </footer>
+</body>
 </html>
