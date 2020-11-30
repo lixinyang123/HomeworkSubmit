@@ -33,3 +33,7 @@ getUndoList("SQL",(data)=>{
 getUndoList("Python",(data)=>{
     showData(data,"undoPython");
 });
+
+getUndoList("Cyol",(data)=>{
+    showData(data,"undoCyol");
+});
